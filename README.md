@@ -2,6 +2,8 @@
 
 `glchksymver` is a command-line tool designed to fetch and display Symfony version information for projects within a specified GitLab group. It utilizes the GitLab API to retrieve projects and examines each project's `composer.json` file to determine the Symfony version used. This tool is particularly useful for teams managing multiple Symfony projects within GitLab, allowing for a quick overview of Symfony versions across projects.
 
+![](/screen.png)
+
 ## Features
 
 - Fetches all projects within a specified GitLab group.
