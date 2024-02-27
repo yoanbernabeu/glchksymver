@@ -78,7 +78,7 @@ func parseSymfonyVersion(composerContent string) (string, error) {
 	}
 
 	// Assuming framework-bundle is the package we're interested in, adjust as necessary
-	version, exists := data.Require["framework-bundle"]
+	version, exists := data.Require["symfony/framework-bundle"]
 	if !exists {
 		return "Not specified", nil
 	}
