@@ -5,38 +5,57 @@
 ## Features
 
 - Fetches all projects within a specified GitLab group.
-- Identifies the Symfony version for each project by analyzing its `composer.json` file.
+- Identifies the Symfony version for each project by analyzing its `composer.json` file (Check the version of `symfony/framework-bundle`).
 - Displays a summary table of projects with their corresponding Symfony version.
 - Lists projects that do not specify a Symfony version or do not contain a `composer.json` file, indicating potential non-Symfony projects.
-- Utilizes ASCII art and progress bars for a friendly user interface.
 
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
-- Go installed on your machine (version 1.16 or later recommended).
 - A GitLab personal access token with permissions to access projects and repositories within your GitLab group.
+- A GitLab group ID, which can be found in the `Settings` > `General` section of your GitLab group.
 
-## Installation
+## How to use
 
-To install `glchksymver`, follow these steps:
+### Usage
 
-1. Download the latest release from the [releases page](
+`glchksymver` is **VERY easy to use**. Just run the following command:
 
-## Building from Source
+```bash
+glchksymver -gitlab_url="https://gitlab.com" -group_id=123456789 -token="glpat-xxxxxxxxxxxxxx"
+```
 
-1. Clone the repository:
-   ```bash
-   git clone https://your-repository-url.git
-   cd glchksymver
-   ```
+### Installation
 
-2. Build the binary:
-   ```bash
-    go build -o glchksymver
-    ```
+#### From binary
 
-3. Move the binary to a directory in your `$PATH`:
-    ```bash
-    mv glchksymver /usr/local/bin
-    ```
+* Linux/Darwin
+
+Just run the following command:
+
+```bash
+curl -sL https://raw.githubusercontent.com/yoanbernabeu/glchksymver/main/install.sh | bash
+```
+
+* Other Operating Systems
+
+Please download the binary from the [release page](https://github.com/yoanbernabeu/glchksymver/releases) and move it to your PATH.
+
+#### From source
+
+glchksymver is written in Go, so you need to install it first.
+
+```bash
+git clone git@github.com:yoanbernabeu/glchksymver.git
+cd glchksymver
+go build -o glchksymver
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Author
+
+Yoan Bernabeu - [yoanbernabeu](https://github.com/yoanbernabeu)
